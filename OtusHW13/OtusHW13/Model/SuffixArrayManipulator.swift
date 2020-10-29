@@ -10,36 +10,78 @@ enum ArraySortType: String {
     case DESC
 }
 
-class SuffixArrayManipulator {
+extension String {
+    
+    var lettersAndSpaces: String {
+        return components(separatedBy: CharacterSet.letters.union(.whitespaces).inverted).joined()
+    }
+}
+
+final class SuffixArrayManipulator {
 
     private var sequenceArray: [SuffixSequence] = [SuffixSequence]()
-    private var suffixArray: [SuffixStruct] = [SuffixStruct]()
-   
-    required init(sentence: String? = nil) {
+    private var allSuffixesArray: [SuffixStruct] = [SuffixStruct]()
+    private var currentSuffixesArray: [SuffixStruct] = [SuffixStruct]()
+    
+    // MARK: Public methods
+    required public init(sentence: String? = nil) {
         self.prepareSuffixArray(initialSentence: sentence)
     }
     
     public func getSuffixCount() -> Int {
-        return suffixArray.count
-    }
-    
-    public func getSuffixList() -> [SuffixStruct] {
-        return self.suffixArray
+        return currentSuffixesArray.count
     }
     
     public func getSuffixByIndex(_ index: Int) -> SuffixStruct {
-        return suffixArray[index]
+        return currentSuffixesArray[index]
     }
+    
+    public func sortAllSuffixes() {
+        self.currentSuffixesArray = allSuffixesArray // we can skip sorting again since we do it during array initialization (prepareSuffixArray)
+    }
+    
+    public func sortTopSuffixArray(sortingLettersCount: Int) {
+        self.currentSuffixesArray = allSuffixesArray
+        self.currentSuffixesArray = allSuffixesArray.filter { currentSuffix in
+            return currentSuffix.suffix.count == sortingLettersCount
+        }
+        
+        self.currentSuffixesArray.sort {
+            $0.appearanceCount > $1.appearanceCount
+        }
+        
+        self.currentSuffixesArray = Array(currentSuffixesArray.prefix(10))
+    }
+    
+    public func sortArray(_ sortingType: ArraySortType) {
+        switch sortingType {
+        case .ASC:
+            print("ASC array sorting")
+            
+            allSuffixesArray.sort {
+                $0.suffix < $1.suffix
+            }
+        case .DESC:
+            print("DESC array sorting")
+            allSuffixesArray.sort {
+                $0.suffix > $1.suffix
+            }
+        }
+        self.currentSuffixesArray = allSuffixesArray
+    }
+    
+    // MARK: Private methods
     
     private func prepareSuffixArray(initialSentence: String?) {
         
         guard let initialSentence = initialSentence else {
             sequenceArray = [SuffixSequence]()
-            suffixArray = [SuffixStruct]()
+            allSuffixesArray = [SuffixStruct]()
             return
         }
         
-        let wordsArray = initialSentence.components(separatedBy: " ")
+        
+        let wordsArray = initialSentence.lettersAndSpaces.components(separatedBy: " ")
         
         for word in wordsArray {
             sequenceArray.append(SuffixSequence(string: word))
@@ -54,33 +96,16 @@ class SuffixArrayManipulator {
             }
         }
         
-        self.sortArray(.DESC)
+        self.sortArray(.ASC)
+        self.currentSuffixesArray = allSuffixesArray
     }
-    
-    
-    func sortArray(_ sortingType: ArraySortType) {
-        switch sortingType {
-        case .ASC:
-            print("ASC array sorting")
-            
-            suffixArray.sort {
-                $0.suffix > $1.suffix
-            }
-        case .DESC:
-            print("DESC array sorting")
-            suffixArray.sort {
-                $0.suffix < $1.suffix
-            }
-        }
-    }
-    
+        
     private func addSuffix(_ suffix: Substring) {
-        if let oldSuffixIndex = self.suffixArray.firstIndex(where:{$0.suffix == suffix}) {
-            suffixArray[oldSuffixIndex].appearanceCount += 1
+        if let oldSuffixIndex = self.allSuffixesArray.firstIndex(where:{$0.suffix == suffix}) {
+            allSuffixesArray[oldSuffixIndex].appearanceCount += 1
         } else {
-            suffixArray.append(SuffixStruct(suffix: suffix))
+            allSuffixesArray.append(SuffixStruct(suffix: suffix))
         }
      }
-    
     
 }
