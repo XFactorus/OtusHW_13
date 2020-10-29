@@ -13,6 +13,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var sortingLabel: UILabel!
     @IBOutlet weak var sortingSwitch: UISwitch!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var stackView: UIStackView!
     
     var suffixArrayManimulator = SuffixArrayManipulator()
 
@@ -31,12 +32,15 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             print("All suffixes list selected")
+            self.stackView.isHidden = false
             self.sortAllSufixes()
         case 1:
             print("Top 3-letters suffixes list selected")
+            self.stackView.isHidden = true
             self.sortTop3Suffixes()
         case 2:
             print("Top 5-letters suffixes list selected")
+            self.stackView.isHidden = true
             self.sortTop5Suffixes()
         default:
             break

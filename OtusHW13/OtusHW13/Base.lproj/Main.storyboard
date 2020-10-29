@@ -92,6 +92,7 @@
                         <outlet property="segmentedControl" destination="YqD-PD-znZ" id="uEf-oH-cTo"/>
                         <outlet property="sortingLabel" destination="ehW-HS-f2M" id="VTX-0N-l1h"/>
                         <outlet property="sortingSwitch" destination="90P-fO-ifC" id="Myc-Wg-nEy"/>
+                        <outlet property="stackView" destination="p9B-Q7-xji" id="6UQ-kX-Upk"/>
                         <outlet property="tableView" destination="x2L-Vm-vOk" id="Yfe-Ec-twi"/>
                     </connections>
                 </viewController>
