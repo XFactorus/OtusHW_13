@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Y3-wZ-D0w">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -8,6 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="fKb-pW-JR6">
+            <objects>
+                <navigationController id="0Y3-wZ-D0w" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gGG-qV-7Kl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pxb-mW-sEN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XKb-23-FIh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-949" y="73"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -17,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x2L-Vm-vOk">
-                                <rect key="frame" x="20" y="170.5" width="374" height="691.5"/>
+                                <rect key="frame" x="20" y="230.5" width="374" height="631.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="VzO-az-wCX" detailTextLabel="8tI-IR-ccW" style="IBUITableViewCellStyleValue1" id="Cpp-uY-e4O">
@@ -47,7 +63,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YqD-PD-znZ">
-                                <rect key="frame" x="60.5" y="44" width="293" height="32"/>
+                                <rect key="frame" x="60.5" y="104" width="293" height="32"/>
                                 <segments>
                                     <segment title="Suffixes"/>
                                     <segment title="Top 3 letters"/>
@@ -58,7 +74,7 @@
                                 </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="p9B-Q7-xji">
-                                <rect key="frame" x="345" y="91" width="49" height="59.5"/>
+                                <rect key="frame" x="345" y="151" width="49" height="59.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ASC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehW-HS-f2M">
                                         <rect key="frame" x="0.0" y="0.0" width="49" height="20.5"/>
@@ -79,7 +95,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="p9B-Q7-xji" firstAttribute="top" secondItem="YqD-PD-znZ" secondAttribute="bottom" constant="16" id="7pj-OH-oNv"/>
-                            <constraint firstItem="YqD-PD-znZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Hkd-1K-Of7"/>
+                            <constraint firstItem="YqD-PD-znZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Hkd-1K-Of7"/>
                             <constraint firstItem="YqD-PD-znZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="L17-2b-Hsm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x2L-Vm-vOk" secondAttribute="trailing" constant="20" id="MbL-Rt-xBS"/>
                             <constraint firstItem="p9B-Q7-xji" firstAttribute="trailing" secondItem="x2L-Vm-vOk" secondAttribute="trailing" id="Pow-t0-gSq"/>
@@ -88,6 +104,7 @@
                             <constraint firstItem="x2L-Vm-vOk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qut-wT-nOp"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xEE-Fi-Tul"/>
                     <connections>
                         <outlet property="segmentedControl" destination="YqD-PD-znZ" id="uEf-oH-cTo"/>
                         <outlet property="sortingLabel" destination="ehW-HS-f2M" id="VTX-0N-l1h"/>

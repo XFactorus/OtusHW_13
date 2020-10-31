@@ -70,6 +70,23 @@ final class SuffixArrayManipulator {
         self.currentSuffixesArray = allSuffixesArray
     }
     
+    
+    public func searchSuffix(str: String) {
+        
+        guard str.trimmingCharacters(in: .whitespaces).count > 0 else {
+            clearSearch()
+            return
+        }
+        
+        self.currentSuffixesArray = allSuffixesArray.filter({ (suffixStruct) -> Bool in
+            return suffixStruct.suffix.lowercased().contains(str.lowercased())
+        })
+    }
+    
+    public func clearSearch() {
+        self.currentSuffixesArray = allSuffixesArray
+    }
+    
     // MARK: Private methods
     
     private func prepareSuffixArray(initialSentence: String?) {
