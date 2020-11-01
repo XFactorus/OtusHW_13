@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5E26FBDC254B354400498EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26FBDB254B354400498EC7 /* AppDelegate.swift */; };
-		5E26FBDE254B354400498EC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26FBDD254B354400498EC7 /* SceneDelegate.swift */; };
 		5E26FBE0254B354400498EC7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26FBDF254B354400498EC7 /* TableViewController.swift */; };
 		5E26FBE3254B354400498EC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E26FBE1254B354400498EC7 /* Main.storyboard */; };
 		5E26FBE5254B354600498EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E26FBE4254B354600498EC7 /* Assets.xcassets */; };
@@ -16,12 +15,38 @@
 		5E26FBF2254B358600498EC7 /* SuffixSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26FBF1254B358600498EC7 /* SuffixSequence.swift */; };
 		5E26FBF6254B484C00498EC7 /* SuffixArrayManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26FBF5254B484C00498EC7 /* SuffixArrayManipulator.swift */; };
 		5E26FBF9254B48B600498EC7 /* SuffixStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26FBF8254B48B600498EC7 /* SuffixStruct.swift */; };
+		5E26FC1D254DB37E00498EC7 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26FC1C254DB37E00498EC7 /* ShareViewController.swift */; };
+		5E26FC20254DB37E00498EC7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E26FC1E254DB37E00498EC7 /* MainInterface.storyboard */; };
+		5E26FC24254DB37E00498EC7 /* ShareText.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5E26FC1A254DB37E00498EC7 /* ShareText.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5E26FC22254DB37E00498EC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E26FBD0254B354400498EC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E26FC19254DB37E00498EC7;
+			remoteInfo = ShareText;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5E26FC28254DB37E00498EC7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5E26FC24254DB37E00498EC7 /* ShareText.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5E26FBD8254B354400498EC7 /* OtusHW13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OtusHW13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E26FBDB254B354400498EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5E26FBDD254B354400498EC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5E26FBDF254B354400498EC7 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5E26FBE2254B354400498EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E26FBE4254B354600498EC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -30,10 +55,23 @@
 		5E26FBF1254B358600498EC7 /* SuffixSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixSequence.swift; sourceTree = "<group>"; };
 		5E26FBF5254B484C00498EC7 /* SuffixArrayManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixArrayManipulator.swift; sourceTree = "<group>"; };
 		5E26FBF8254B48B600498EC7 /* SuffixStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixStruct.swift; sourceTree = "<group>"; };
+		5E26FC1A254DB37E00498EC7 /* ShareText.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareText.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E26FC1C254DB37E00498EC7 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		5E26FC1F254DB37E00498EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		5E26FC21254DB37E00498EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E26FC2F254EFEDB00498EC7 /* ShareText.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareText.entitlements; sourceTree = "<group>"; };
+		5E26FC32254EFF2900498EC7 /* OtusHW13.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OtusHW13.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5E26FBD5254B354400498EC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E26FC17254DB37E00498EC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				5E26FBDA254B354400498EC7 /* OtusHW13 */,
+				5E26FC1B254DB37E00498EC7 /* ShareText */,
 				5E26FBD9254B354400498EC7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				5E26FBD8254B354400498EC7 /* OtusHW13.app */,
+				5E26FC1A254DB37E00498EC7 /* ShareText.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,9 +102,9 @@
 		5E26FBDA254B354400498EC7 /* OtusHW13 */ = {
 			isa = PBXGroup;
 			children = (
+				5E26FC32254EFF2900498EC7 /* OtusHW13.entitlements */,
 				5E26FBF0254B355600498EC7 /* Model */,
 				5E26FBDB254B354400498EC7 /* AppDelegate.swift */,
-				5E26FBDD254B354400498EC7 /* SceneDelegate.swift */,
 				5E26FBDF254B354400498EC7 /* TableViewController.swift */,
 				5E26FBE1254B354400498EC7 /* Main.storyboard */,
 				5E26FBE4254B354600498EC7 /* Assets.xcassets */,
@@ -84,6 +124,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5E26FC1B254DB37E00498EC7 /* ShareText */ = {
+			isa = PBXGroup;
+			children = (
+				5E26FC2F254EFEDB00498EC7 /* ShareText.entitlements */,
+				5E26FC1C254DB37E00498EC7 /* ShareViewController.swift */,
+				5E26FC1E254DB37E00498EC7 /* MainInterface.storyboard */,
+				5E26FC21254DB37E00498EC7 /* Info.plist */,
+			);
+			path = ShareText;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,15 +145,34 @@
 				5E26FBD4254B354400498EC7 /* Sources */,
 				5E26FBD5254B354400498EC7 /* Frameworks */,
 				5E26FBD6254B354400498EC7 /* Resources */,
+				5E26FC28254DB37E00498EC7 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5E26FC23254DB37E00498EC7 /* PBXTargetDependency */,
 			);
 			name = OtusHW13;
 			productName = OtusHW13;
 			productReference = 5E26FBD8254B354400498EC7 /* OtusHW13.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5E26FC19254DB37E00498EC7 /* ShareText */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E26FC25254DB37E00498EC7 /* Build configuration list for PBXNativeTarget "ShareText" */;
+			buildPhases = (
+				5E26FC16254DB37E00498EC7 /* Sources */,
+				5E26FC17254DB37E00498EC7 /* Frameworks */,
+				5E26FC18254DB37E00498EC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareText;
+			productName = ShareText;
+			productReference = 5E26FC1A254DB37E00498EC7 /* ShareText.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -114,6 +184,9 @@
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					5E26FBD7254B354400498EC7 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					5E26FC19254DB37E00498EC7 = {
 						CreatedOnToolsVersion = 12.1;
 					};
 				};
@@ -132,6 +205,7 @@
 			projectRoot = "";
 			targets = (
 				5E26FBD7254B354400498EC7 /* OtusHW13 */,
+				5E26FC19254DB37E00498EC7 /* ShareText */,
 			);
 		};
 /* End PBXProject section */
@@ -147,6 +221,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5E26FC18254DB37E00498EC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E26FC20254DB37E00498EC7 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -159,11 +241,26 @@
 				5E26FBF9254B48B600498EC7 /* SuffixStruct.swift in Sources */,
 				5E26FBF2254B358600498EC7 /* SuffixSequence.swift in Sources */,
 				5E26FBDC254B354400498EC7 /* AppDelegate.swift in Sources */,
-				5E26FBDE254B354400498EC7 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E26FC16254DB37E00498EC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E26FC1D254DB37E00498EC7 /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5E26FC23254DB37E00498EC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E26FC19254DB37E00498EC7 /* ShareText */;
+			targetProxy = 5E26FC22254DB37E00498EC7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5E26FBE1254B354400498EC7 /* Main.storyboard */ = {
@@ -180,6 +277,14 @@
 				5E26FBE7254B354600498EC7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5E26FC1E254DB37E00498EC7 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E26FC1F254DB37E00498EC7 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -304,8 +409,10 @@
 		5E26FBED254B354600498EC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OtusHW13/OtusHW13.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDCQ43FS8W;
 				INFOPLIST_FILE = OtusHW13/Info.plist;
@@ -313,7 +420,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = quantag.OtusHW13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladp.OtusHW13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -323,8 +430,10 @@
 		5E26FBEE254B354600498EC7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OtusHW13/OtusHW13.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDCQ43FS8W;
 				INFOPLIST_FILE = OtusHW13/Info.plist;
@@ -332,8 +441,48 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = quantag.OtusHW13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladp.OtusHW13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5E26FC26254DB37E00498EC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareText/ShareText.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SDCQ43FS8W;
+				INFOPLIST_FILE = ShareText/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladp.OtusHW13.SharedExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5E26FC27254DB37E00498EC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareText/ShareText.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SDCQ43FS8W;
+				INFOPLIST_FILE = ShareText/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladp.OtusHW13.SharedExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -356,6 +505,15 @@
 			buildConfigurations = (
 				5E26FBED254B354600498EC7 /* Debug */,
 				5E26FBEE254B354600498EC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E26FC25254DB37E00498EC7 /* Build configuration list for PBXNativeTarget "ShareText" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E26FC26254DB37E00498EC7 /* Debug */,
+				5E26FC27254DB37E00498EC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
