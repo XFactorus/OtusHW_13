@@ -19,25 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        if let ud = UserDefaults(suiteName: "group.otusvp.shared"),
-           let shareText = ud.object(forKey: "sharedText") as? String {
-                openMainController(text: shareText)
+        if let sharedDefaults = UserDefaults(suiteName: "group.otusvp.shared"),
+           let sharedArray = sharedDefaults.stringArray(forKey: "sharedStringsArray") ?? [String](),
+           sharedArray.count > 0 {
+            openMainController(text: sharedArray[0])
         }
-        
+                
         return true
         
     }
     
     private func openMainController(text: String) {
-        print("Open main controller")
+        print("Open main controller for newly shared text: \(text)")
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "TableViewController")
-        
-        let navigationController:UINavigationController = storyboard.instantiateInitialViewController() as! UINavigationController
-
-        navigationController.viewControllers = [mainViewController]
-        self.window?.rootViewController = navigationController
+        let tabBarController = storyboard.instantiateInitialViewController() as! UITabBarController
+        self.window?.rootViewController = tabBarController
         
     }
 

@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E04681C255AE48B0056969A /* SharingsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04681B255AE48B0056969A /* SharingsListViewController.swift */; };
 		5E26FBDC254B354400498EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26FBDB254B354400498EC7 /* AppDelegate.swift */; };
-		5E26FBE0254B354400498EC7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26FBDF254B354400498EC7 /* TableViewController.swift */; };
+		5E26FBE0254B354400498EC7 /* SuffixesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26FBDF254B354400498EC7 /* SuffixesListViewController.swift */; };
 		5E26FBE3254B354400498EC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E26FBE1254B354400498EC7 /* Main.storyboard */; };
 		5E26FBE5254B354600498EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E26FBE4254B354600498EC7 /* Assets.xcassets */; };
 		5E26FBE8254B354600498EC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E26FBE6254B354600498EC7 /* LaunchScreen.storyboard */; };
@@ -45,9 +46,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E04681B255AE48B0056969A /* SharingsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingsListViewController.swift; sourceTree = "<group>"; };
 		5E26FBD8254B354400498EC7 /* OtusHW13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OtusHW13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E26FBDB254B354400498EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5E26FBDF254B354400498EC7 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		5E26FBDF254B354400498EC7 /* SuffixesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixesListViewController.swift; sourceTree = "<group>"; };
 		5E26FBE2254B354400498EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E26FBE4254B354600498EC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E26FBE7254B354600498EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,6 +83,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E046812255AE3FD0056969A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E26FBDF254B354400498EC7 /* SuffixesListViewController.swift */,
+				5E04681B255AE48B0056969A /* SharingsListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5E046813255AE40D0056969A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5E26FBE4254B354600498EC7 /* Assets.xcassets */,
+				5E26FC32254EFF2900498EC7 /* OtusHW13.entitlements */,
+				5E26FBDB254B354400498EC7 /* AppDelegate.swift */,
+				5E26FBE9254B354600498EC7 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5E046814255AE4210056969A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5E26FBE6254B354600498EC7 /* LaunchScreen.storyboard */,
+				5E26FBE1254B354400498EC7 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		5E26FBCF254B354400498EC7 = {
 			isa = PBXGroup;
 			children = (
@@ -102,14 +133,10 @@
 		5E26FBDA254B354400498EC7 /* OtusHW13 */ = {
 			isa = PBXGroup;
 			children = (
-				5E26FC32254EFF2900498EC7 /* OtusHW13.entitlements */,
+				5E046813255AE40D0056969A /* Application */,
 				5E26FBF0254B355600498EC7 /* Model */,
-				5E26FBDB254B354400498EC7 /* AppDelegate.swift */,
-				5E26FBDF254B354400498EC7 /* TableViewController.swift */,
-				5E26FBE1254B354400498EC7 /* Main.storyboard */,
-				5E26FBE4254B354600498EC7 /* Assets.xcassets */,
-				5E26FBE6254B354600498EC7 /* LaunchScreen.storyboard */,
-				5E26FBE9254B354600498EC7 /* Info.plist */,
+				5E046814255AE4210056969A /* Storyboards */,
+				5E046812255AE3FD0056969A /* ViewControllers */,
 			);
 			path = OtusHW13;
 			sourceTree = "<group>";
@@ -237,10 +264,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E26FBF6254B484C00498EC7 /* SuffixArrayManipulator.swift in Sources */,
-				5E26FBE0254B354400498EC7 /* TableViewController.swift in Sources */,
+				5E26FBE0254B354400498EC7 /* SuffixesListViewController.swift in Sources */,
 				5E26FBF9254B48B600498EC7 /* SuffixStruct.swift in Sources */,
 				5E26FBF2254B358600498EC7 /* SuffixSequence.swift in Sources */,
 				5E26FBDC254B354400498EC7 /* AppDelegate.swift in Sources */,
+				5E04681C255AE48B0056969A /* SharingsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,10 +440,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = OtusHW13/OtusHW13.entitlements;
+				CODE_SIGN_ENTITLEMENTS = OtusHW13/Application/OtusHW13.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDCQ43FS8W;
-				INFOPLIST_FILE = OtusHW13/Info.plist;
+				INFOPLIST_FILE = OtusHW13/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,10 +461,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = OtusHW13/OtusHW13.entitlements;
+				CODE_SIGN_ENTITLEMENTS = OtusHW13/Application/OtusHW13.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDCQ43FS8W;
-				INFOPLIST_FILE = OtusHW13/Info.plist;
+				INFOPLIST_FILE = OtusHW13/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -18,7 +18,10 @@ class ShareViewController: SLComposeServiceViewController {
         guard let text = textView.text else { return }
         
         guard let sharedDefaults = UserDefaults(suiteName: "group.otusvp.shared") else { return }
-        sharedDefaults.set(text, forKey: "sharedText")
+        
+        var sharedStringsArray = sharedDefaults.stringArray(forKey: "sharedStringsArray") ?? [String]()
+        sharedStringsArray.insert(text, at: 0)
+        sharedDefaults.set(sharedStringsArray, forKey: "sharedStringsArray")
         
         let u = URL(string: "OtusVPHW13://text")
         

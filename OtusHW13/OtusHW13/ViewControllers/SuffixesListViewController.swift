@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class SuffixesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortingLabel: UILabel!
@@ -113,13 +113,22 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func initSuffixArray() {
         
-        var processedText: String!
-        if let ud = UserDefaults(suiteName: "group.otusvp.shared"),
-           let shareText = ud.object(forKey: "sharedText") as? String {
-               processedText = shareText
+        var processedText: String = ""
+        
+        guard let sharedDefaults = UserDefaults(suiteName: "group.otusvp.shared") else {
+            print("Errpr: cannot init user defaults")
+            return
         }
-        else {
+        
+        var sharedStringsArray = sharedDefaults.stringArray(forKey: "sharedStringsArray") ?? [String]()
+        
+        if sharedStringsArray.count > 0 {
+               processedText = sharedStringsArray[0]
+        } else {
             processedText = "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+            
+            sharedStringsArray.insert(processedText, at: 0)
+            sharedDefaults.set(sharedStringsArray, forKey: "sharedStringsArray")
         }
         
         self.suffixArrayManipulator = SuffixArrayManipulator(sentence: processedText)
