@@ -15,9 +15,12 @@ class JobScheduler {
                 job.execute()
                 group.leave()
             }
-            group.wait()
         }
-        completion?(jobs)
+    
+        group.notify(queue: .main) { [self] in
+            print("All tasks completed")
+            completion?(jobs)
+        }
     }
     
 }

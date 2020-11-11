@@ -26,6 +26,7 @@ class SharingsListViewController: UIViewController, UITableViewDelegate, UITable
     @IBAction func runTestsPressed(_ sender: Any) {
         runTests()
     }
+    
     // MARK: - TableView
     
     private func configTableView() {
@@ -42,7 +43,22 @@ class SharingsListViewController: UIViewController, UITableViewDelegate, UITable
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let sharedElement = sharingHistoryVM.getElementForIndex(indexPath.row)
         cell.textLabel?.text = sharedElement?.text ?? ""
-        cell.detailTextLabel?.text = String(sharedElement?.time ?? 0.0)
+        
+        if let time = sharedElement?.time, time > 0.0 {
+            cell.detailTextLabel?.text = String(time)
+            if sharedElement!.isMax {
+                cell.detailTextLabel?.textColor = .red
+            } else if sharedElement!.isMin {
+                cell.detailTextLabel?.textColor = .green
+            } else {
+                cell.detailTextLabel?.textColor = .black
+            }
+           
+        } else {
+            cell.detailTextLabel?.text = ""
+            cell.detailTextLabel?.textColor = .black
+        }
+        
         
         return cell
     }
@@ -65,7 +81,12 @@ class SharingsListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     private func runTests() {
-        self.sharingHistoryVM.runTests()
+        if self.sharingHistoryVM.runTests() == false {
+            let alert = UIAlertController(title: "Warning", message: "Test is already launched!", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
     }
 }
 

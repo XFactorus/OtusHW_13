@@ -3,8 +3,10 @@ import Foundation
 final class SharingHistoryViewModel {
     
     var testsCompletion: (() -> Void)?
+    
     private var sharingsArray = [SharingModel]()
-
+    private var testIsActive: Bool = false
+    
     func setupWithStringArray(_ stringsArray: [String]) {
         self.sharingsArray = [SharingModel]()
         for string in stringsArray {
@@ -21,13 +23,15 @@ final class SharingHistoryViewModel {
         return sharingsArray[index]
     }
     
-    func runTests() {
+    func runTests() -> Bool {
+        
+        guard testIsActive == false else {
+            return false
+        }
         
         let scheduler = JobScheduler()
         for sharingStruct in sharingsArray {
             let suffixBuildJob = JobQueue()
-//            let suffixArrayManipuator = SuffixArrayManipulator()
-            
             suffixBuildJob.task = {
                 return SuffixArrayManipulator().prepareSuffixArrayWithTimer(initialSentence: sharingStruct.text)
             }
@@ -36,16 +40,30 @@ final class SharingHistoryViewModel {
         
         scheduler.completion = { [weak self] jobs in
             guard let strongSelf = self else { return }
-//            guard strongSelf.dataSource.count >= 3 && jobs.count >= 3 else { return }
             for (index, job) in jobs.enumerated() {
-//                strongSelf.dataSource[index].testResult = jobs[index].executionTime
                 strongSelf.sharingsArray[index].time = job.executionTime
             }
-            strongSelf.testsCompletion?()
+            strongSelf.testIsActive = false
+            strongSelf.findBestWorseTime()
         }
+        self.testIsActive = true
         scheduler.runJobs()
         
+        return true
+    }
+    
+    func findBestWorseTime() {
         
+        let minTime = self.sharingsArray.min(by: { $0.time < $1.time })?.time
+
+        sharingsArray.filter { $0.time == minTime}[0].isMin = true
+        
+        if sharingsArray.count > 1 {
+            let maxTime = self.sharingsArray.max(by: { $0.time < $1.time })?.time
+            sharingsArray.filter { $0.time == maxTime}[0].isMax = true
+        }
+        self.testsCompletion?()
         
     }
 }
+    
