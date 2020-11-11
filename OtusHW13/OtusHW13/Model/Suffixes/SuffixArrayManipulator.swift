@@ -1,8 +1,3 @@
-//
-//  SuffixArrayManipulator.swift
-//  OtusHW13
-
-
 import Foundation
 
 enum ArraySortType: String {
@@ -24,8 +19,44 @@ final class SuffixArrayManipulator {
     private var currentSuffixesArray: [SuffixStruct] = [SuffixStruct]()
     
     // MARK: Public methods
-    required public init(sentence: String? = nil) {
+    
+
+    public init(sentence: String? = nil) {
         self.prepareSuffixArray(initialSentence: sentence)
+    }
+    
+    public func prepareSuffixArrayWithTimer(initialSentence: String?) -> TimeInterval {
+        return Profiler.runClosureForTime() {
+            self.prepareSuffixArray(initialSentence: initialSentence)
+        }
+    }
+    
+    public func prepareSuffixArray(initialSentence: String?) {
+        
+        guard let initialSentence = initialSentence else {
+            sequenceArray = [SuffixSequence]()
+            allSuffixesArray = [SuffixStruct]()
+            return
+        }
+        
+        
+        let wordsArray = initialSentence.lettersAndSpaces.components(separatedBy: " ")
+        
+        for word in wordsArray {
+            sequenceArray.append(SuffixSequence(string: word))
+        }
+        
+        var suffixArray: [Substring] = [Substring]()
+        
+        for sequence in sequenceArray {
+            for suffix in sequence {
+                suffixArray.append(suffix)
+                self.addSuffix(suffix)
+            }
+        }
+        
+        self.sortArray(.ASC)
+        self.currentSuffixesArray = allSuffixesArray
     }
     
     public func getSuffixCount() -> Int {
@@ -37,7 +68,7 @@ final class SuffixArrayManipulator {
     }
     
     public func sortAllSuffixes() {
-        self.currentSuffixesArray = allSuffixesArray // we can skip sorting again since we do it during array initialization (prepareSuffixArray)
+        self.currentSuffixesArray = allSuffixesArray // we can skip sorting again
     }
     
     public func sortTopSuffixArray(sortingLettersCount: Int) {
@@ -89,34 +120,6 @@ final class SuffixArrayManipulator {
     
     // MARK: Private methods
     
-    private func prepareSuffixArray(initialSentence: String?) {
-        
-        guard let initialSentence = initialSentence else {
-            sequenceArray = [SuffixSequence]()
-            allSuffixesArray = [SuffixStruct]()
-            return
-        }
-        
-        
-        let wordsArray = initialSentence.lettersAndSpaces.components(separatedBy: " ")
-        
-        for word in wordsArray {
-            sequenceArray.append(SuffixSequence(string: word))
-        }
-        
-        var suffixArray: [Substring] = [Substring]()
-                
-        for sequence in sequenceArray {
-            for suffix in sequence {
-                suffixArray.append(suffix)
-                self.addSuffix(suffix)
-            }
-        }
-        
-        self.sortArray(.ASC)
-        self.currentSuffixesArray = allSuffixesArray
-    }
-        
     private func addSuffix(_ suffix: Substring) {
         if let oldSuffixIndex = self.allSuffixesArray.firstIndex(where:{$0.suffix == suffix}) {
             allSuffixesArray[oldSuffixIndex].appearanceCount += 1

@@ -19,6 +19,11 @@
 		5E26FC1D254DB37E00498EC7 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26FC1C254DB37E00498EC7 /* ShareViewController.swift */; };
 		5E26FC20254DB37E00498EC7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E26FC1E254DB37E00498EC7 /* MainInterface.storyboard */; };
 		5E26FC24254DB37E00498EC7 /* ShareText.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5E26FC1A254DB37E00498EC7 /* ShareText.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5E6562ED255C5FAE0023788C /* SharingHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6562EC255C5FAE0023788C /* SharingHistoryViewModel.swift */; };
+		5E6562F1255C6BFD0023788C /* Profiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6562F0255C6BFD0023788C /* Profiler.swift */; };
+		5E6562F5255C723D0023788C /* SharingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6562F4255C723D0023788C /* SharingModel.swift */; };
+		5EA07060255B0C9C007ED2DB /* JobScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0705E255B0C9C007ED2DB /* JobScheduler.swift */; };
+		5EA07061255B0C9C007ED2DB /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0705F255B0C9C007ED2DB /* JobQueue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,11 @@
 		5E26FC21254DB37E00498EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E26FC2F254EFEDB00498EC7 /* ShareText.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareText.entitlements; sourceTree = "<group>"; };
 		5E26FC32254EFF2900498EC7 /* OtusHW13.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OtusHW13.entitlements; sourceTree = "<group>"; };
+		5E6562EC255C5FAE0023788C /* SharingHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingHistoryViewModel.swift; sourceTree = "<group>"; };
+		5E6562F0255C6BFD0023788C /* Profiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profiler.swift; sourceTree = "<group>"; };
+		5E6562F4255C723D0023788C /* SharingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingModel.swift; sourceTree = "<group>"; };
+		5EA0705E255B0C9C007ED2DB /* JobScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobScheduler.swift; sourceTree = "<group>"; };
+		5EA0705F255B0C9C007ED2DB /* JobQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +143,7 @@
 		5E26FBDA254B354400498EC7 /* OtusHW13 */ = {
 			isa = PBXGroup;
 			children = (
+				5E6562EB255C5F880023788C /* ViewModels */,
 				5E046813255AE40D0056969A /* Application */,
 				5E26FBF0254B355600498EC7 /* Model */,
 				5E046814255AE4210056969A /* Storyboards */,
@@ -144,9 +155,8 @@
 		5E26FBF0254B355600498EC7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5E26FBF1254B358600498EC7 /* SuffixSequence.swift */,
-				5E26FBF5254B484C00498EC7 /* SuffixArrayManipulator.swift */,
-				5E26FBF8254B48B600498EC7 /* SuffixStruct.swift */,
+				5EA0705D255B0C86007ED2DB /* JobSheduler */,
+				5EA07058255B0C76007ED2DB /* Suffixes */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +170,35 @@
 				5E26FC21254DB37E00498EC7 /* Info.plist */,
 			);
 			path = ShareText;
+			sourceTree = "<group>";
+		};
+		5E6562EB255C5F880023788C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5E6562EC255C5FAE0023788C /* SharingHistoryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5EA07058255B0C76007ED2DB /* Suffixes */ = {
+			isa = PBXGroup;
+			children = (
+				5E26FBF1254B358600498EC7 /* SuffixSequence.swift */,
+				5E26FBF5254B484C00498EC7 /* SuffixArrayManipulator.swift */,
+				5E26FBF8254B48B600498EC7 /* SuffixStruct.swift */,
+				5E6562F4255C723D0023788C /* SharingModel.swift */,
+			);
+			path = Suffixes;
+			sourceTree = "<group>";
+		};
+		5EA0705D255B0C86007ED2DB /* JobSheduler */ = {
+			isa = PBXGroup;
+			children = (
+				5E6562F0255C6BFD0023788C /* Profiler.swift */,
+				5EA0705F255B0C9C007ED2DB /* JobQueue.swift */,
+				5EA0705E255B0C9C007ED2DB /* JobScheduler.swift */,
+			);
+			path = JobSheduler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +302,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E6562F5255C723D0023788C /* SharingModel.swift in Sources */,
+				5EA07060255B0C9C007ED2DB /* JobScheduler.swift in Sources */,
+				5E6562ED255C5FAE0023788C /* SharingHistoryViewModel.swift in Sources */,
+				5EA07061255B0C9C007ED2DB /* JobQueue.swift in Sources */,
 				5E26FBF6254B484C00498EC7 /* SuffixArrayManipulator.swift in Sources */,
+				5E6562F1255C6BFD0023788C /* Profiler.swift in Sources */,
 				5E26FBE0254B354400498EC7 /* SuffixesListViewController.swift in Sources */,
 				5E26FBF9254B48B600498EC7 /* SuffixStruct.swift in Sources */,
 				5E26FBF2254B358600498EC7 /* SuffixSequence.swift in Sources */,

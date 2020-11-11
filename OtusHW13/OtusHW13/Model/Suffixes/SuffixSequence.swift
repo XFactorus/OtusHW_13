@@ -1,8 +1,3 @@
-//
-//  SuffixSequence.swift
-//  OtusHW13
-//
-
 import Foundation
 
 struct SuffixIterator: IteratorProtocol {

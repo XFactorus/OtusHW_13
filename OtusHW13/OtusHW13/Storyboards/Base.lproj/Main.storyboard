@@ -148,17 +148,24 @@
                                 <rect key="frame" x="20" y="88" width="374" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="RKx-d2-hcm" style="IBUITableViewCellStyleDefault" id="8n3-Y6-VPy">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="RKx-d2-hcm" detailTextLabel="4kc-bY-Mr4" style="IBUITableViewCellStyleSubtitle" id="8n3-Y6-VPy">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8n3-Y6-VPy" id="7ky-Yt-PaR">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RKx-d2-hcm">
-                                                    <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
+                                                    <rect key="frame" x="20" y="10" width="33" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4kc-bY-Mr4">
+                                                    <rect key="frame" x="20" y="31.5" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -177,7 +184,13 @@
                             <constraint firstItem="loa-bM-IDL" firstAttribute="trailing" secondItem="3Gw-XT-B0b" secondAttribute="trailing" constant="20" id="n8v-85-jfC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LFC-64-Vlw"/>
+                    <navigationItem key="navigationItem" id="LFC-64-Vlw">
+                        <barButtonItem key="rightBarButtonItem" title="Run Tests" id="rE4-0c-hon">
+                            <connections>
+                                <action selector="runTestsPressed:" destination="gOK-QN-KQg" id="sOw-Gv-Zfq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="3Gw-XT-B0b" id="IP5-bf-Cfb"/>
                     </connections>
